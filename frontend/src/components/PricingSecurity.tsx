@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Lock, CheckCircle2, Mail, Globe } from 'lucide-react';
 
 export const PricingSecurity: React.FC = () => {
-  const [mockSavings, setMockSavings] = useState<number>(350);
-
-  // Calculations (35% monthly contingency for 12 months, min $20/mo, capped at $1,000/yr)
-  const annualSavings = mockSavings * 12;
-  
-  let ourSplitMonthly = Math.max(20, mockSavings * 0.35);
-  let ourSplitAnnual = ourSplitMonthly * 12;
-  if (ourSplitAnnual > 1000) {
-    ourSplitAnnual = 1000;
-    ourSplitMonthly = 1000 / 12;
-  }
-  
-  const clientNetAnnual = Math.max(0, annualSavings - ourSplitAnnual);
-  const clientNetMonthly = clientNetAnnual / 12;
+  const mockSavings = 350;
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('en-US', {
