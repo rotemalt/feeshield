@@ -59,12 +59,12 @@ export const PricingSecurity: React.FC = () => {
               </span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
-              FeeShield's DIY Audit Tool is <strong>100% Free</strong>. The slider below simulates standard pricing for our optional <em>Done-For-You (DFY) Partner Program</em>, where partners handle negotiations on your behalf for a 35% monthly savings split (min $20/mo, capped at $1,000/yr). Currently, all partner fees are fully waived ($0) for our first 1,000 pilot waitlist members.
+              FeeShield's DIY Audit Tool is <strong>100% Free</strong>. This is a <strong>personal, open-source portfolio project</strong>. The Done-For-You (DFY) partner program, contingency pricing models, and monthly splits are **not active or available at the moment**. The slider below serves purely as a mockup simulator for portfolio demonstration.
             </p>
 
-            <div className="calculator-slider-group" style={{ marginBottom: '32px' }}>
+            <div className="calculator-slider-group" style={{ marginBottom: '32px', opacity: 0.5 }}>
               <div className="slider-header">
-                <span className="form-label">Simulated Monthly Savings</span>
+                <span className="form-label">Mockup Simulator (Disabled)</span>
                 <span className="slider-value-bubble">{formatCurrency(mockSavings)}/mo</span>
               </div>
               <input
@@ -74,7 +74,8 @@ export const PricingSecurity: React.FC = () => {
                 step="50"
                 className="calculator-range-input"
                 value={mockSavings}
-                onChange={(e) => setMockSavings(Number(e.target.value))}
+                onChange={() => {}}
+                disabled
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                 <span>$50/mo</span>
@@ -83,23 +84,23 @@ export const PricingSecurity: React.FC = () => {
               </div>
             </div>
 
-            <div className="calculator-bill-box" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
+            <div className="calculator-bill-box" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '20px', opacity: 0.5 }}>
               <div className="calc-line">
-                <span>Partner Program Share (35% split, capped at $1,000):</span>
-                <span style={{ fontWeight: 600, color: 'var(--color-primary-hover)' }}>{formatCurrency(ourSplitMonthly)}/mo</span>
+                <span>Simulated Share (Not Active):</span>
+                <span style={{ fontWeight: 600, color: 'var(--color-primary-hover)' }}>$0.00/mo</span>
               </div>
               <div className="calc-line">
-                <span>Your Retained Cash (you keep the rest):</span>
-                <span style={{ fontWeight: 600, color: 'var(--color-success)' }}>{formatCurrency(clientNetMonthly)}/mo</span>
+                <span>Retained Cash:</span>
+                <span style={{ fontWeight: 600, color: 'var(--color-success)' }}>$0.00/mo</span>
               </div>
               <div className="calc-line total" style={{ borderTop: '1px solid var(--border-color)', paddingTop: '12px', marginTop: '10px' }}>
-                <span>Your Net Annual Recovery:</span>
-                <span className="calc-line savings" style={{ fontSize: '1.4rem' }}>{formatCurrency(clientNetAnnual)}/yr</span>
+                <span>Net Annual Recovery:</span>
+                <span className="calc-line savings" style={{ fontSize: '1.4rem' }}>$0.00/yr</span>
               </div>
             </div>
 
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '20px', lineHeight: '1.45', borderTop: '1px dashed var(--border-color)', paddingTop: '12px' }}>
-              ⚠️ <strong>Liability Disclaimer:</strong> FeeShield is a rate auditing utility. Any contract adjustments, fee amendments, or processor relationship outcomes are the sole responsibility of the customer. FeeShield holds no liability.
+              ⚠️ <strong>Liability Disclaimer:</strong> FeeShield is a personal portfolio utility. Audits are for educational demonstration. All responsibility and risk falls entirely on the user. FeeShield holds zero liability.
             </div>
           </div>
         </div>

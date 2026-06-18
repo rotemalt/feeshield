@@ -42,8 +42,8 @@ export const DFYTrack: React.FC<DFYTrackProps> = ({ audit, businessName, onSucce
   return (
     <div className="card path-card dfy-card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       {/* Top Banner Tag */}
-      <span className="path-badge" style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%)', boxShadow: '0 0 12px rgba(139, 92, 246, 0.3)' }}>
-        ✨ Waived for First 1,000 (Normally Max $1,000)
+      <span className="path-badge" style={{ background: 'linear-gradient(135deg, #6b7280 0%, #374151 100%)', boxShadow: '0 0 12px rgba(107, 114, 128, 0.3)' }}>
+        🚫 Currently Unavailable
       </span>
       
       {step === 'info' && (
@@ -51,124 +51,65 @@ export const DFYTrack: React.FC<DFYTrackProps> = ({ audit, businessName, onSucce
           <div>
             <div className="path-header" style={{ marginBottom: '20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <span className="path-tag" style={{ margin: 0, backgroundColor: 'var(--color-primary-hover)' }}>Separate Partner Program</span>
+                <span className="path-tag" style={{ margin: 0, backgroundColor: 'var(--color-text-muted)' }}>Separate Partner Program</span>
                 <span style={{
                   fontSize: '0.75rem',
                   fontWeight: 700,
-                  backgroundColor: 'rgba(139, 92, 246, 0.15)',
-                  color: 'var(--color-primary-hover)',
-                  border: '1px solid rgba(139, 92, 246, 0.3)',
+                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
+                  color: 'var(--color-danger)',
+                  border: '1px solid rgba(239, 68, 68, 0.3)',
                   padding: '2px 8px',
                   borderRadius: '10px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'
                 }}>
-                  Optional Add-On
+                  Inactive / Placeholder
                 </span>
               </div>
               <h3 className="path-title" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Done-For-You Proxy Negotiation</h3>
               <p className="path-desc" style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)', marginTop: '6px', lineHeight: '1.4' }}>
-                Auditing your statements and exposing processor markups is a **fundamental right** of every business—which is why our DIY tool is and will always remain **100% free and open**. 
-                As a separate optional service, you can have our proxy negotiation partners contact your processor on your behalf to lock in your target rate of <strong style={{ color: 'var(--color-success)' }}>{audit.target_effective_rate.toFixed(2)}%</strong>.
+                Exposing processor markups is a **fundamental right** of every business—which is why our DIY tool is and will always remain **100% free and open**.
               </p>
             </div>
 
-            {/* Premium Marketing Highlights: Experience and Time Savings */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px', backgroundColor: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ color: 'var(--color-success)', flexShrink: 0, marginTop: '2px' }}>
-                  <Clock size={16} />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>Separate Negotiation Team (Save 5+ Hours)</h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                    Merchant retention departments are designed to frustrate business owners. Our partners navigate the red tape, hold times, and complex contract terms directly so you don't have to.
-                  </p>
-                </div>
-              </div>
+            {/* Warning / Informational Box indicating Personal Project & Unavailable Option B */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px', backgroundColor: 'rgba(239, 68, 68, 0.03)', padding: '20px', borderRadius: '10px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <h4 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-danger)', margin: 0 }}>
+                ⚠️ Personal Project & Liability Notice
+              </h4>
+              <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: '1.45' }}>
+                This is a <strong>personal, open-source portfolio project</strong>. The Done-For-You negotiation track, commercial pricing splits, percentage metrics simulation, and support waitlists are **not active or available at the moment**.
+              </p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', margin: 0, lineHeight: '1.45' }}>
+                All auditing and scripts must be run as a self-managed, DIY process. **All responsibility for using these tools, auditing invoices, or communicating with processors falls solely on you, the user.**
+              </p>
+            </div>
 
-              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ color: 'var(--color-primary-hover)', flexShrink: 0, marginTop: '2px' }}>
-                  <Sparkles size={16} />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>Professional Wholesale Rate Restructuring</h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                    The proxy team bypasses front-line support reps, using direct relationships and industry leverage to restructure your pricing to transparent Interchange-Plus terms.
-                  </p>
-                </div>
+            {/* Locked Info Display */}
+            <div style={{ display: 'flex', gap: '12px', padding: '12px', backgroundColor: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid var(--border-color)', marginBottom: '16px' }}>
+              <div style={{ flex: 1, textAlign: 'center' }}>
+                <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', display: 'block', marginBottom: '2px' }}>Target Rate</span>
+                <strong style={{ fontSize: '1.1rem', color: 'var(--color-text-primary)' }}>{audit.target_effective_rate.toFixed(2)}%</strong>
               </div>
-
-              <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ color: 'var(--color-success)', flexShrink: 0, marginTop: '2px' }}>
-                  <CheckCircle2 size={16} />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>100% Free Pilot Access Included</h4>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                    Normally, this premium partner negotiation program charges a percentage of recovered cash flow (up to a $1,000 cap). Today, all negotiation fees are fully waived for our early users.
-                  </p>
-                </div>
+              <div style={{ flex: 1, textAlign: 'center', borderLeft: '1px solid var(--border-color)' }}>
+                <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', display: 'block', marginBottom: '2px' }}>Audited Savings</span>
+                <strong style={{ fontSize: '1.1rem', color: 'var(--color-success)' }}>
+                  {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(audit.annual_potential_savings)}/yr
+                </strong>
               </div>
             </div>
 
-            {/* Waitlist Intake Form */}
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <div style={{ flex: 1 }}>
-                  <label className="form-label" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Business Name</label>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600, padding: '10px', backgroundColor: 'rgba(0,0,0,0.15)', border: '1px solid var(--border-color)', borderRadius: '6px', color: 'var(--color-text-primary)' }}>
-                    {businessName}
-                  </div>
-                </div>
-                <div style={{ flex: 1 }}>
-                  <label className="form-label" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Audited Savings</label>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 700, padding: '10px', backgroundColor: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: '6px', color: 'var(--color-success)' }}>
-                    {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(audit.annual_potential_savings)}/yr
-                  </div>
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="dfy-processor-input" style={{ fontSize: '0.75rem' }}>Current Payment Processor</label>
-                <input
-                  id="dfy-processor-input"
-                  type="text"
-                  className="form-input"
-                  placeholder="e.g. Stripe, Clover, Chase Paymentech, Fiserv"
-                  value={processor}
-                  onChange={(e) => setProcessor(e.target.value)}
-                  style={{ fontSize: '0.85rem', padding: '10px' }}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label" htmlFor="dfy-message-input" style={{ fontSize: '0.75rem' }}>Special Instructions / Target Deadlines (Optional)</label>
-                <textarea
-                  id="dfy-message-input"
-                  className="form-input"
-                  rows={2}
-                  placeholder="Tell us about any contract commitments or billing issues you want our underwriters to inspect..."
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  style={{ fontSize: '0.85rem', padding: '10px', resize: 'none', fontFamily: 'var(--font-family)' }}
-                />
-              </div>
-
-              <button 
-                type="submit" 
-                className="btn btn-primary btn-full" 
-                style={{ marginTop: '4px' }}
-                disabled={submitting || !processor.trim()}
-              >
-                {submitting ? 'Registering Request...' : <>Request Done-For-You Audit & Join Waitlist <ArrowRight size={16} /></>}
-              </button>
-            </form>
+            <button 
+              className="btn btn-full" 
+              style={{ backgroundColor: 'var(--border-color)', color: 'var(--color-text-muted)', cursor: 'not-allowed' }}
+              disabled
+            >
+              Done-For-You Negotiation is Unavailable
+            </button>
           </div>
 
-          <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', borderTop: '1px solid var(--border-color)', paddingTop: '10px', lineHeight: '1.4' }}>
-            ⚠️ <strong>Liability Protection:</strong> Done-For-You proxy negotiations are conducted subject to strict rate limits. All final contract changes are submitted to the client for signature approval. FeeShield holds zero legal liability.
+          <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', borderTop: '1px solid var(--border-color)', paddingTop: '10px', lineHeight: '1.4', marginTop: '16px' }}>
+            ⚠️ <strong>User Responsibility:</strong> Auditing and copy-pasting negotiation templates are at the user's sole risk. Verify your processor's rules before sharing statements.
           </div>
         </div>
       )}

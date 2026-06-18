@@ -15,12 +15,12 @@ export const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: 'What is a Limited Power of Attorney (LPOA) and what does it authorize?',
-      answer: 'FeeShield is a 100% free DIY utility that parses statements locally and generates scripts for you to negotiate yourself—requiring no LPOA or permission forms. An LPOA is only relevant if you explicitly opt-in to our separate Done-For-You (DFY) partner program, which authorizes our partner underwriting proxies to request rate changes on your behalf. You retain 100% ownership and control of your processing account.',
+      answer: 'FeeShield is a 100% free DIY utility that parses statements locally and generates scripts for you to negotiate yourself—requiring no LPOA or permission forms. Since this is a personal portfolio project, the Done-For-You (DFY) partner program and LPOA authorizations are completely inactive and unavailable. You handle all processor communication yourself and retain 100% control.',
       category: 'security'
     },
     {
       question: 'Is this really free? How do you make money?',
-      answer: 'Yes, FeeShield\'s DIY Audit Utility is 100% free, private, and open-source. There are no credit card checks or monthly software fees required. We believe that checking merchant rate cards is a basic business right. We sustain this free tool by offering an optional Done-For-You (DFY) partner program where partners handle the negotiation for a performance split—which is also currently waived for our first 1,000 pilot cohort waitlist members.',
+      answer: 'Yes, FeeShield is a personal portfolio project and is 100% free, private, and open-source. There are no credit card checks or monthly software fees. The commercial Done-For-You (DFY) negotiation track, waitlists, and performance pricing models are not active or available at the moment. All auditing is strictly DIY and self-managed.',
       category: 'pricing'
     },
     {
@@ -35,7 +35,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: 'How long does it take for the rate reduction to take effect?',
-      answer: 'For DIY, most processors apply adjustments to your merchant ledger within 3 to 5 business days after you submit the negotiation script. For DFY, our partner underwriting team initiates contact with your provider within 24 hours of onboarding and secures adjustments within 5 to 7 business days.',
+      answer: 'For DIY, most processors apply adjustments to your merchant ledger within 3 to 5 business days after you submit the negotiation script. Since the Done-For-You track is currently unavailable, all negotiations must be handled directly by the user.',
       category: 'negotiation'
     },
     {
@@ -45,7 +45,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: 'What is the "Transparent Proxy Loop" email subdomain?',
-      answer: 'If you opt-in to the Done-For-You separate partner program, partners set up a secure communications channel. For the DIY kit, you do not need this; you simply copy-paste the generated email script directly from your own corporate inbox to your processor.',
+      answer: 'The Transparent Proxy Loop and redirect forwarder are components of the Done-For-You commercial track, which is currently inactive. For the DIY kit, you do not need this; you simply copy-paste the generated email script directly from your own corporate inbox to your processor.',
       category: 'diy-dfy'
     }
   ];
