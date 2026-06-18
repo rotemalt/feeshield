@@ -7,14 +7,14 @@ export function getActiveProvider(): ApiProvider {
   const saved = localStorage.getItem('FEESHIELD_ACTIVE_PROVIDER');
   if (saved) return saved as ApiProvider;
   
-  // Fallback check if VITE_GEMINI_API_KEY or FEESHIELD_GEMINI_API_KEY is present
-  const hasGeminiKey = !!(localStorage.getItem('FEESHIELD_GEMINI_API_KEY') || import.meta.env.VITE_GEMINI_API_KEY);
+  // Fallback check if FEESHIELD_GEMINI_API_KEY is present
+  const hasGeminiKey = !!localStorage.getItem('FEESHIELD_GEMINI_API_KEY');
   return hasGeminiKey ? 'google' : 'simulation';
 }
 
 export function getApiKey(provider: ApiProvider): string {
   if (provider === 'google') {
-    return localStorage.getItem('FEESHIELD_GEMINI_API_KEY') || import.meta.env.VITE_GEMINI_API_KEY || '';
+    return localStorage.getItem('FEESHIELD_GEMINI_API_KEY') || '';
   }
   if (provider === 'openai') {
     return localStorage.getItem('FEESHIELD_OPENAI_API_KEY') || '';

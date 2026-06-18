@@ -143,7 +143,7 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
         </div>
 
         <div className="badge-glow" style={{ marginTop: '8px' }}>
-          🛡️ Secure & Encrypted HIPAA-Compliant File Vault
+          🛡️ 100% Private Client-Side Sandbox (No Files Saved)
         </div>
       </div>
 
